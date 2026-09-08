@@ -1,0 +1,32 @@
+# Mutual Exclusion, Semaphore and Monitor
+
+## Use Case
+### Concurrent Seat Booking System
+
+This project demonstrates synchronization mechanisms used in a
+concurrent seat booking system where multiple users may try to book
+the same seats simultaneously.
+
+## Programs
+
+### 1. Mutex
+Demonstrates mutual exclusion by allowing only one thread to access
+the shared booking resource at a time.
+
+### 2. Mutex and Semaphore
+Uses mutex and semaphore mechanisms to control concurrent access
+to shared resources.
+
+### 3. Mutex, Semaphore and Monitor
+Demonstrates synchronization using mutex, semaphore and monitor
+concepts for safe concurrent seat booking.
+
+## Concepts Used
+- Threads
+- Mutual Exclusion
+- Mutex
+- Semaphore
+- Monitor
+- Critical Section
+- Process Synchronization
+- Race Condition
