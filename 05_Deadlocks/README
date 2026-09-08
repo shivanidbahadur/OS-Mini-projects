@@ -1,0 +1,31 @@
+# Deadlocks
+
+## Use Case
+### Train Track Deadlock Demonstration
+
+This project demonstrates how deadlocks can occur when multiple
+trains compete for limited shared resources such as railway tracks.
+
+## Programs
+
+### 1. Deadlock
+Demonstrates a situation where processes wait indefinitely for
+resources held by one another.
+
+### 2. Deadlock Handling
+Demonstrates techniques used to identify and handle deadlock
+situations.
+
+### 3. Banker's Algorithm
+Demonstrates deadlock avoidance by checking whether resource
+allocation keeps the system in a safe state.
+
+## Concepts Used
+
+- Deadlock
+- Resource Allocation
+- Deadlock Handling
+- Deadlock Avoidance
+- Safe State
+- Banker's Algorithm
+- Process Synchronization
