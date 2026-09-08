@@ -1,0 +1,24 @@
+# Reader-Writer Problem
+
+## Use Case
+### Concurrent Product Inventory Management
+
+This project demonstrates the Reader-Writer synchronization problem
+in a product inventory system where multiple users may access
+inventory information concurrently.
+
+## Concept
+
+- Multiple readers can access shared data simultaneously.
+- A writer requires exclusive access to modify the shared data.
+- Read-write synchronization prevents inconsistent data access.
+
+## Concepts Used
+
+- Threads
+- Reader-Writer Problem
+- Read-Write Locks
+- Mutual Exclusion
+- Critical Section
+- Process Synchronization
+- Concurrent Access
