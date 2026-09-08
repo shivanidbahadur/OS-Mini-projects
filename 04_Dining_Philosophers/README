@@ -1,0 +1,28 @@
+# Dining Philosophers Problem
+
+## Use Case
+### Concurrent Resource Sharing
+
+This project demonstrates the Dining Philosophers synchronization
+problem, where multiple threads compete for limited shared resources.
+
+## Concept
+
+The problem demonstrates how concurrent processes or threads can
+compete for shared resources and lead to synchronization issues.
+
+It helps understand:
+- Mutual exclusion
+- Deadlock
+- Starvation
+- Resource sharing
+
+## Concepts Used
+
+- Threads
+- Mutex
+- Mutual Exclusion
+- Deadlock
+- Starvation
+- Resource Sharing
+- Process Synchronization
