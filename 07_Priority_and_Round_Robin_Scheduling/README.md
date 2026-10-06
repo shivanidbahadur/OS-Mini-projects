@@ -22,17 +22,10 @@ Each process is given a fixed time quantum in a cyclic order. If a process is no
 
 **File:** `Round_Robin_Scheduling/round_robin.c`
 
-### Best and Worst Fit
-
-Best Fit allocates a process to the smallest suitable memory block, while Worst Fit allocates it to the largest suitable block.
-
-**File:** `Best_and_Worst_Fit/best_worst_fit.c`
 
 ## Concepts Covered
 
 - Priority Scheduling
 - Round Robin Scheduling
 - Time Quantum
-- Memory Allocation
-- Best Fit
-- Worst Fit
+
