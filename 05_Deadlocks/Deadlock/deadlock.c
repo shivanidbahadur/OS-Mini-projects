@@ -1,30 +1,31 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <unistd.h>
-pthread_mutex_t track[2];
-
-void *trainA(void *arg) {
-    printf("Train A locked Track-0, waiting for Track-1...\n");
-    pthread_mutex_lock(&track[0]);
-    sleep(1);
-    pthread_mutex_lock(&track[1]);
+pthread_mutex_t track[2] = {PTHREAD_MUTEX_INITIALIZER, PTHREAD_MUTEX_INITIALIZER};
+void *train(void *arg) {
+    int id = *(int*)arg, f = id % 2, s = 1 - f;
+    printf("Train %d: requesting Track-%d\n", id, f);
+    pthread_mutex_lock(&track[f]);
+    printf("Train %d: LOCKED Track-%d\n", id, f);
+    for (int i = 1; i <= 3; i++) {
+        printf("Train %d: moving on Track-%d (step %d/3)\n", id, f, i);
+        sleep(1);
+    }
+    printf("Train %d: requesting Track-%d\n", id, s);
+    pthread_mutex_lock(&track[s]);
+    printf("Train %d: crossed safely\n", id);
+    pthread_mutex_unlock(&track[s]);
+    pthread_mutex_unlock(&track[f]);
     return NULL;
-}void *trainB(void *arg) {
-    printf("Train B locked Track-1, waiting for Track-0...\n");
-    pthread_mutex_lock(&track[1]);
-    sleep(1);
-    pthread_mutex_lock(&track[0]);
-    return NULL;
-}int main() {
-    int choice;
-    printf("Enter 1 to start deadlock demo: ");
-    scanf("%d", &choice);
-    pthread_t t1, t2;
-    pthread_mutex_init(&track[0], NULL);
-    pthread_mutex_init(&track[1], NULL);
-    pthread_create(&t1, NULL, trainA, NULL);
-    pthread_create(&t2, NULL, trainB, NULL);
-    pthread_join(t1, NULL);
-    pthread_join(t2, NULL);
-    return 0;
+}
+int main() {
+    int x, y;
+    pthread_t a, b;
+    printf("Enter two train IDs: ");
+    scanf("%d %d", &x, &y);
+    pthread_create(&a, NULL, train, &x);
+    pthread_create(&b, NULL, train, &y);
+    pthread_join(a, NULL);
+    pthread_join(b, NULL);
+   printf("No deadlock occurred\n");
 }
