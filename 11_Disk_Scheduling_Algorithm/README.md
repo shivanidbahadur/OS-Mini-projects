@@ -1,55 +1,40 @@
-# Disk Scheduling Algorithm
+# CCTV Storage System Using Disk Scheduling Algorithms
 
-This experiment demonstrates different disk scheduling algorithms used by an operating system to decide the order in which disk I/O requests are serviced.
+## Overview
+This project demonstrates the use of disk scheduling algorithms in a CCTV storage system. CCTV cameras continuously store video recordings, and disk scheduling helps decide the order in which disk requests are processed.
+
+The program implements six disk scheduling algorithms and calculates the total disk head movement for each one.
 
 ## Use Case
-
-**CCTV Storage System**
-
-A CCTV system continuously generates storage requests. Disk scheduling algorithms determine the order in which these requests are handled to reduce disk head movement and improve performance.
+In a CCTV system, video recordings from multiple cameras are stored on a disk. When recordings need to be accessed, disk scheduling algorithms determine the order in which the requests are processed. This helps compare different methods of managing disk access.
 
 ## Algorithms Implemented
+- **FCFS:** Processes requests in the order they arrive.
+- **SSTF:** Processes the request closest to the current head position.
+- **SCAN:** Moves the disk head in one direction and then reverses.
+- **C-SCAN:** Moves in one direction and returns to the beginning.
+- **LOOK:** Reverses direction after reaching the last request in that direction.
+- **C-LOOK:** Moves to the last request and jumps to the first request on the other side.
 
-1. FCFS (First Come First Serve)
-2. SSTF (Shortest Seek Time First)
-3. SCAN
-4. C-SCAN (Circular SCAN)
-5. LOOK
+## Technologies Used
+- C Programming
+- Operating Systems – Disk Scheduling
 
-## Programs
+## How to Run
+Compile the program:
 
-### FCFS
-Services disk requests in the same order in which they arrive.
+```bash
+gcc DISKSCHED.C -o disksched
+```
 
-**File:** `FCFS/fcfs.c`
+Run the program:
 
-### SSTF
-Services the request that is closest to the current disk head position.
+```bash
+./disksched
+```
 
-**File:** `SSTF/sstf.c`
+## Output
+The program displays the disk head movement sequence and total head movement for each algorithm.
 
-### SCAN
-Moves the disk head in one direction while servicing requests and then reverses direction.
-
-**File:** `SCAN/scan.c`
-
-### C-SCAN
-Moves the disk head in one direction, reaches the end, and returns to the beginning before continuing to service requests.
-
-**File:** `C_SCAN/c_scan.c`
-
-### LOOK
-Similar to SCAN, but the disk head reverses direction at the last pending request instead of going to the physical end of the disk.
-
-**File:** `LOOK/look.c`
-
-## Concepts Covered
-
-- Disk scheduling
-- Disk head movement
-- Seek time
-- FCFS scheduling
-- SSTF scheduling
-- SCAN scheduling
-- C-SCAN scheduling
-- LOOK scheduling
+## Conclusion
+This project compares six disk scheduling algorithms using a CCTV storage scenario and demonstrates how they manage disk requests differently.
